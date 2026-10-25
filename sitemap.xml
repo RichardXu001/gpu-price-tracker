@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://richardxu001.github.io/gpu-price-tracker/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://richardxu001.github.io/gpu-price-tracker/rtx-4090-price.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://richardxu001.github.io/gpu-price-tracker/h100-price.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://richardxu001.github.io/gpu-price-tracker/a100-price.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://richardxu001.github.io/gpu-price-tracker/spot-vs-on-demand.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://richardxu001.github.io/gpu-price-tracker/providers.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://richardxu001.github.io/gpu-price-tracker/faq.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+</urlset>

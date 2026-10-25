@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GPU Rental Pricing FAQ — Hourly Rates, Medians and Gotchas</title>
+<meta name="description" content="Straight answers on GPU rental pricing: what a 4090 costs per day, why trackers disagree, whether median or floor matters, and how to read a listing.">
+<link rel="canonical" href="https://richardxu001.github.io/gpu-price-tracker/faq.html">
+<meta property="og:title" content="GPU Rental Pricing FAQ">
+<meta property="og:description" content="Common questions about cloud GPU rental pricing, answered with tracked figures and sources.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <p class="site-name">GPU Rental Price Tracker</p>
+    <p class="tagline">Independent hourly-rate reference · every number carries a source and a date</p>
+  </div>
+</header>
+<nav class="site-nav">
+  <div class="wrap">
+    <a href="index.html">Snapshot</a>
+    <a href="rtx-4090-price.html">RTX 4090</a>
+    <a href="h100-price.html">H100</a>
+    <a href="a100-price.html">A100</a>
+    <a href="spot-vs-on-demand.html">Spot vs On-Demand</a>
+    <a href="providers.html">Providers</a>
+    <a href="faq.html" aria-current="page">FAQ</a>
+  </div>
+</nav>
+
+<main class="wrap">
+  <p class="crumb"><a href="index.html">Snapshot</a> → FAQ</p>
+  <h1>GPU rental pricing FAQ</h1>
+
+  <h2>How much does it cost to rent an RTX 4090 per day?</h2>
+  <p>At the tracked on-demand median of $0.42/hr (Coloprice, Oct 2026), a full 24-hour day costs about
+  $10, and a 24/7 month about $307. Interruptible listings change the picture: tracked spot rates of
+  $0.16–$0.24/hr put a day at roughly $4–$6 (GPUFinder, Oct 2026). Providers increasingly quote daily
+  rates on reserved listings; the tracked 12-month 4090 reserved rate equates to about $6.50/day
+  ($0.27/hr, Novita via Coloprice, Oct 2026).</p>
+
+  <h2>Why do two trackers show different medians for the same card?</h2>
+  <p>Trackers crawl different provider sets, deduplicate differently, and refresh on different schedules.
+  The H100 "from" rate, for instance, was quoted as $1.68, $1.99 and $2.55 by three aggregators on the
+  same day in October 2026. This site's rule: never mix two trackers in one table, and always carry the
+  source name with the number.</p>
+
+  <h2>Should I compare medians or floors?</h2>
+  <p>Floors tell you what's technically available; medians tell you what a typical listing costs. A floor
+  listing is often an interruptible, spec-light machine (small system RAM, slow disk), so it is not an
+  apples-to-apples substitute for the median listing. When budgeting, use the median; when experimenting
+  with fault-tolerant batch jobs, the floor can be enough.</p>
+
+  <h2>Is a cheaper consumer card always the better deal?</h2>
+  <p>For throughput-per-dollar on single-GPU batch work, consumer cards usually win — the 4090's tracked
+  median is about a quarter of the A100 80GB median. Datacenter cards justify their premium with ECC
+  memory, more VRAM (80GB vs 24GB), NVLink on SXM boards and professional availability. Match the card to
+  the workload's memory requirement first, then compare hourly rates within that class.</p>
+
+  <h2>What else in a listing affects real cost?</h2>
+  <ul>
+    <li><strong>vCPU RAM and disk.</strong> Under-provisioned machines force you to rent a bigger GPU class
+      than the model needs.</li>
+    <li><strong>Egress bandwidth.</strong> Matters if you move data or model weights on and off the box
+      frequently.</li>
+    <li><strong>Interruption policy.</strong> Pausable-resumable interruptible listings and hard-reclaim
+      spot are priced similarly but behave very differently.</li>
+    <li><strong>Billing granularity.</strong> Some services bill per second, some round up to the hour —
+      for short inference jobs this can matter more than the headline hourly rate.</li>
+  </ul>
+
+  <h2>How current are these numbers?</h2>
+  <p>Every figure on this site carries a capture date, and the latest review pass was October 2026.
+  Marketplace prices move daily; treat anything here as a planning reference, then confirm current rates
+  on the provider's own page or a live marketplace listing before committing to a budget.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Independent reference project. Not affiliated with any provider or tracker named above.
+    All trademarks belong to their owners.</p>
+  </div>
+</footer>
+</body>
+</html>

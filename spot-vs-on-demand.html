@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spot vs On-Demand GPU Rental — How Big Is the Discount?</title>
+<meta name="description" content="Measured spot/interruptible discounts on cloud GPU rentals: 44–52% below on-demand on tracked RTX 4090 listings, plus how interruption policies differ.">
+<link rel="canonical" href="https://richardxu001.github.io/gpu-price-tracker/spot-vs-on-demand.html">
+<meta property="og:title" content="Spot vs On-Demand GPU Rental">
+<meta property="og:description" content="Tracked discount percentages between spot and on-demand GPU rates, and what interruption actually means on each provider type.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <p class="site-name">GPU Rental Price Tracker</p>
+    <p class="tagline">Independent hourly-rate reference · every number carries a source and a date</p>
+  </div>
+</header>
+<nav class="site-nav">
+  <div class="wrap">
+    <a href="index.html">Snapshot</a>
+    <a href="rtx-4090-price.html">RTX 4090</a>
+    <a href="h100-price.html">H100</a>
+    <a href="a100-price.html">A100</a>
+    <a href="spot-vs-on-demand.html" aria-current="page">Spot vs On-Demand</a>
+    <a href="providers.html">Providers</a>
+    <a href="faq.html">FAQ</a>
+  </div>
+</nav>
+
+<main class="wrap">
+  <p class="crumb"><a href="index.html">Snapshot</a> → Spot vs On-Demand</p>
+  <h1>Spot vs on-demand GPU rental</h1>
+  <p>Interruptible ("spot") pricing is the single biggest lever on rental cost. Tracked discounts are
+  large and fairly consistent across provider types.</p>
+
+  <h2>Measured gaps</h2>
+  <table>
+    <thead><tr><th>Offer</th><th>Spot rate</th><th>On-demand rate</th><th>Gap</th><th>Source (date)</th></tr></thead>
+    <tbody>
+      <tr><td>RTX 4090 — Salad</td><td>$0.16 / hr</td><td>—</td><td>−52%</td><td>GPUFinder (Oct 2026)</td></tr>
+      <tr><td>RTX 4090 — Vast.ai bid</td><td>$0.24 / hr</td><td>$0.43 / hr</td><td>−44%</td><td>GPUFinder (Oct 2026)</td></tr>
+      <tr><td>H100 — RunPod spot vs on-demand</td><td>$1.69 / hr</td><td>$2.49 / hr</td><td>−32%</td><td>gputracker.dev (Apr 2026)</td></tr>
+      <tr><td>Generic cloud spot (AWS-style)</td><td>varies</td><td>varies</td><td>up to ~90%, 2-minute warning</td><td>general cloud docs convention (Oct 2026)</td></tr>
+      <tr><td>RunPod spot program, advertised</td><td>≈ half price</td><td>—</td><td>−50%</td><td>third-party write-up (Apr 2026)</td></tr>
+    </tbody>
+  </table>
+  <p class="src">The RTX 4090 rows come from a same-day scan, so the gap is like-for-like. The H100 rows
+  compare the cheapest spot listing with the on-demand list from an April 2026 scan and are indicative only.</p>
+
+  <h2>What "interruptible" means in practice</h2>
+  <ul>
+    <li><strong>Marketplace hosts (consumer cards).</strong> The dominant model is a bid price: you offer a
+      maximum hourly rate, and the instance is paused — not deleted — when a higher bid arrives or the host
+      reclaims the machine. Vast.ai's own FAQ describes interrupted instances as resumable rather than
+      wiped (source: vast.ai FAQ, retrieved Oct 2026).</li>
+    <li><strong>Professional clouds (datacenter cards).</strong> Spot programs reclaim capacity with short
+      notice; AWS-style spot advertises discounts up to ~90% with a two-minute warning (generic cloud
+      documentation convention, Oct 2026).</li>
+  </ul>
+
+  <h2>When spot is a bad trade</h2>
+  <ul>
+    <li>Checkpointing is awkward for your workload and a pause would lose hours of progress.</li>
+    <li>You are serving live traffic — a paused inference endpoint is an outage.</li>
+    <li>Your job's wall-clock is dominated by data reloading rather than compute, so restarts cost more
+      than the discount saves.</li>
+  </ul>
+  <p>For batch fine-tuning with frequent checkpoints, idle-tolerant rendering-style jobs, or bulk
+  evaluation runs, the 30–50% discount usually outweighs interruption risk.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Independent reference project. Not affiliated with any provider or tracker named above.
+    All trademarks belong to their owners.</p>
+  </div>
+</footer>
+</body>
+</html>

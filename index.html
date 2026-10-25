@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GPU Rental Price Tracker — Hourly Rates for H100, A100, RTX 4090</title>
+<meta name="description" content="Independent tracker for cloud GPU rental prices: RTX 4090, H100 and A100 hourly rates, spot vs on-demand gaps, and provider averages, with sources and dates for every number.">
+<link rel="canonical" href="https://richardxu001.github.io/gpu-price-tracker/">
+<meta property="og:title" content="GPU Rental Price Tracker">
+<meta property="og:description" content="Hourly rental rates for H100, A100 and RTX 4090 across cloud providers, with sources and dates for every figure.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <p class="site-name">GPU Rental Price Tracker</p>
+    <p class="tagline">Independent hourly-rate reference · every number carries a source and a date</p>
+  </div>
+</header>
+<nav class="site-nav">
+  <div class="wrap">
+    <a href="index.html" aria-current="page">Snapshot</a>
+    <a href="rtx-4090-price.html">RTX 4090</a>
+    <a href="h100-price.html">H100</a>
+    <a href="a100-price.html">A100</a>
+    <a href="spot-vs-on-demand.html">Spot vs On-Demand</a>
+    <a href="providers.html">Providers</a>
+    <a href="faq.html">FAQ</a>
+  </div>
+</nav>
+
+<main class="wrap">
+  <h1>October 2026 snapshot</h1>
+  <p>This page is a plain reference for people comparing cloud GPU rental rates. It aggregates figures
+  published by third-party price trackers and by the providers themselves. Nothing here is a quote —
+  marketplace prices move daily — so each table states the source and the date the figure was captured.</p>
+
+  <h2>Headline rates at a glance</h2>
+  <table>
+    <thead><tr><th>GPU</th><th>Typical on-demand range</th><th>Reference median</th><th>Source (date)</th></tr></thead>
+    <tbody>
+      <tr><td>RTX 4090 24GB</td><td>$0.13 – $0.74 / hr</td><td>$0.42 / hr</td><td>Coloprice tracker (Oct 2026)</td></tr>
+      <tr><td>H100 80GB</td><td>$2 – $12 / hr</td><td>≈ $3.39 / hr</td><td>GetDeploying index via Akash (Sep 2026)</td></tr>
+      <tr><td>A100 80GB</td><td>$0.53 – $1.89 / hr</td><td>$1.75 / hr</td><td>Coloprice tracker (Oct 2026)</td></tr>
+    </tbody>
+  </table>
+  <p class="note">Medians differ between trackers because they cover different sets of providers. This site
+  never mixes two trackers in one table.</p>
+
+  <h2>What moved this year</h2>
+  <ul>
+    <li><strong>RTX 4090 rates fell roughly 39% year over year</strong> — the tracked median went from $0.69/hr
+      (Jun 2024 reference point in the tracker's history) to $0.42/hr by Sep 2026
+      (source: Coloprice snapshot history, retrieved Oct 2026).</li>
+    <li><strong>H100 1-year reserved pricing rose about 40% off its low</strong> — $1.70/hr in Oct 2025 to
+      materially higher levels through 2026 (source: GetDeploying index cited by Akash's H100 price
+      tracker, retrieved Sep 2026).</li>
+    <li><strong>Spot/interruptible gaps stayed wide</strong> — on the RTX 4090, tracked spot listings were
+      44–52% below on-demand on the same providers (source: GPUFinder, Oct 2026). See
+      <a href="spot-vs-on-demand.html">spot vs on-demand</a>.</li>
+  </ul>
+
+  <h2>Reading the numbers</h2>
+  <p>Three pricing tiers exist in the market. Consumer cards (RTX 3090/4090) are listed mostly on
+  peer-to-peer marketplaces by individual hosts. Last-generation datacenter cards (A100) sit in the middle.
+  Current-generation datacenter cards (H100 and newer) are listed by professional clouds. Rates within one
+  card can differ by 3–5× depending on tier, which is why range and median are both shown on the
+  per-card pages.</p>
+
+  <h2>Pages in this tracker</h2>
+  <ul class="page-list">
+    <li><a href="rtx-4090-price.html">RTX 4090 rental price</a> — on-demand, reserved and spot rates</li>
+    <li><a href="h100-price.html">H100 rental price</a> — on-demand vs reserved, enterprise tier</li>
+    <li><a href="a100-price.html">A100 rental price</a> — 40GB vs 80GB variants</li>
+    <li><a href="spot-vs-on-demand.html">Spot vs on-demand</a> — how big the discount really is</li>
+    <li><a href="providers.html">Provider averages</a> — marketplace vs professional cloud</li>
+    <li><a href="faq.html">FAQ</a> — common questions about GPU rental pricing</li>
+  </ul>
+
+  <h2>Method</h2>
+  <p>Figures are collected from public trackers (Coloprice, GPUFinder, gputracker.dev) and from
+  provider-published rates quoted by those trackers or by Akash's H100 price write-up. When a tracker and a
+  provider disagree, both are shown with attribution. Figures are point-in-time: the capture date is listed
+  with every number, and the snapshot above was last reviewed in <strong>October 2026</strong>.</p>
+  <p>If you want to see how a live marketplace presents per-host pricing next to these tracker medians,
+  browsing a rental marketplace such as <a href="https://sparehive.com/" rel="nofollow">SpareHive</a> is a
+  useful sanity check: listing pages show individual hosts' rates rather than aggregates.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Independent reference project. Not affiliated with any provider or tracker named above.
+    All trademarks belong to their owners.</p>
+  </div>
+</footer>
+</body>
+</html>

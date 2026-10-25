@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>H100 Rental Price — On-Demand, Reserved and Enterprise Rates (2026)</title>
+<meta name="description" content="H100 hourly rental rates in 2026: $2–$12 on-demand range, ~$3.39 median, cheapest listings from $1.69, reserved pricing up ~40% off its 2025 low.">
+<link rel="canonical" href="https://richardxu001.github.io/gpu-price-tracker/h100-price.html">
+<meta property="og:title" content="H100 Rental Price (2026)">
+<meta property="og:description" content="Tracked on-demand range, median, cheapest listings and reserved-rate trend for H100 cloud rentals.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <p class="site-name">GPU Rental Price Tracker</p>
+    <p class="tagline">Independent hourly-rate reference · every number carries a source and a date</p>
+  </div>
+</header>
+<nav class="site-nav">
+  <div class="wrap">
+    <a href="index.html">Snapshot</a>
+    <a href="rtx-4090-price.html">RTX 4090</a>
+    <a href="h100-price.html" aria-current="page">H100</a>
+    <a href="a100-price.html">A100</a>
+    <a href="spot-vs-on-demand.html">Spot vs On-Demand</a>
+    <a href="providers.html">Providers</a>
+    <a href="faq.html">FAQ</a>
+  </div>
+</nav>
+
+<main class="wrap">
+  <p class="crumb"><a href="index.html">Snapshot</a> → H100</p>
+  <h1>H100 rental price</h1>
+  <p>The H100 is the current-generation datacenter card most in demand for LLM inference and training.
+  Unlike consumer cards, it is offered almost exclusively by professional clouds, and pricing is often
+  quoted per-GPU within 8-GPU nodes.</p>
+
+  <h2>On-demand rates</h2>
+  <table>
+    <thead><tr><th>Measure</th><th>Rate</th><th>Source (date)</th></tr></thead>
+    <tbody>
+      <tr><td>Whole-market on-demand range</td><td>$2 – $12 / hr</td><td>GetDeploying index, cited by Akash (Sep 2026)</td></tr>
+      <tr><td>Single-GPU mainstream band</td><td>$2 – $7 / hr</td><td>GetDeploying index, cited by Akash (Sep 2026)</td></tr>
+      <tr><td>Market median</td><td>≈ $3.39 / hr</td><td>GetDeploying index, cited by Akash (Sep 2026)</td></tr>
+    </tbody>
+  </table>
+  <p class="src">Source: akash.network H100 rental price write-up, which republishes the GetDeploying index
+  (retrieved Sep 2026).</p>
+
+  <h2>Cheapest tracked listings</h2>
+  <table>
+    <thead><tr><th>Offer</th><th>Rate</th><th>Source (date)</th></tr></thead>
+    <tbody>
+      <tr><td>RunPod spot</td><td>$1.69 / hr</td><td>gputracker.dev 54-provider scan (Apr 2026)</td></tr>
+      <tr><td>Vast.ai</td><td>$1.85 / hr</td><td>gputracker.dev (Apr 2026)</td></tr>
+      <tr><td>RunPod on-demand</td><td>$2.49 / hr</td><td>gputracker.dev (Apr 2026)</td></tr>
+      <tr><td>Lambda</td><td>$2.49 / hr</td><td>gputracker.dev (Apr 2026)</td></tr>
+      <tr><td>CoreWeave</td><td>$2.89 / hr</td><td>gputracker.dev (Apr 2026)</td></tr>
+      <tr><td>AWS p5 (per-GPU equivalent)</td><td>$4.08 / hr</td><td>gputracker.dev (Apr 2026)</td></tr>
+    </tbody>
+  </table>
+  <p class="src">The gputracker scan covered 54 providers and 5,269 instances. Rates are the cheapest
+  qualifying listing per provider, not averages.</p>
+
+  <h2>Large-cloud reference points</h2>
+  <table>
+    <thead><tr><th>Cloud</th><th>Rate</th><th>Source (date)</th></tr></thead>
+    <tbody>
+      <tr><td>Azure NC H100 v5, single card</td><td>≈ $6.98 / hr</td><td>via Akash write-up (Sep 2026)</td></tr>
+      <tr><td>CoreWeave 8-card node, per-GPU</td><td>≈ $6.16 / hr</td><td>via Akash write-up (Sep 2026)</td></tr>
+      <tr><td>Google Cloud a3, per-GPU equivalent</td><td>≈ $11.06 / hr</td><td>via Akash write-up (Sep 2026)</td></tr>
+      <tr><td>Lambda 8×H100 node, per node</td><td>$19.92 / hr</td><td>gputracker.dev (Apr 2026)</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Reserved-rate trend</h2>
+  <p>One-year reserved H100 pricing bottomed near <strong>$1.70/hr in October 2025 and rose close to 40%</strong>
+  through 2026 (source: GetDeploying index cited by Akash, retrieved Sep 2026). The direction matters for
+  planning: the on-demand median softened over the same period, so the gap between committing for a year
+  and paying hourly narrowed.</p>
+
+  <h2>Enterprise tier beyond the H100</h2>
+  <p>For completeness, tracked rates one rung up the stack (source: gputracker.dev, Apr 2026):
+  H200 from $5.25/hr (CoreWeave), B200 from $7.50/hr, GB200 from $12.00/hr. These SKUs are thinly listed,
+  so treat them as list prices rather than market medians.</p>
+
+  <h2>Aggregator snapshots differ — a caution</h2>
+  <p>Price aggregators quote different "from" rates for the H100 because they sample different sets:
+  $1.68/hr (Inference Hub), $1.99/hr (gpurentalprices, Oct 2026) and $2.55/hr (Rank.ai) were all live
+  quotes in October 2026. When a rate matters to your build, check the underlying provider's own price page
+  rather than trusting any single aggregator — including this one.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Independent reference project. Not affiliated with any provider or tracker named above.
+    All trademarks belong to their owners.</p>
+  </div>
+</footer>
+</body>
+</html>
